@@ -20,6 +20,8 @@ attribute :logfile, :kind_of => String, :default => '/tmp/newrelic-python-agent.
 attribute :loglevel, :kind_of => String, :default => 'info'
 attribute :daemon_ssl, :kind_of => [TrueClass, FalseClass], :default => true
 attribute :high_security, :kind_of => [TrueClass, FalseClass], :default => false
+# capture_params and ignored_params are obsolete. Maintained for backward compat
+# with existing recipes, but will be ignored.
 attribute :capture_params, :kind_of => [TrueClass, FalseClass], :default => false
 attribute :ignored_params, :kind_of => String, :default => ' '
 attribute :transaction_tracer_enable, :kind_of => [TrueClass, FalseClass], :default => true
@@ -36,3 +38,6 @@ attribute :browser_monitoring_auto_instrument, :kind_of => [TrueClass, FalseClas
 attribute :cross_application_tracer_enable, :kind_of => [TrueClass, FalseClass], :default => true
 attribute :feature_flag, :kind_of => String, :default => nil
 attribute :python, :kind_of => String, :default => nil
+attribute :attributes_enabled, :kind_of => [TrueClass, FalseClass], :default => false
+attribute :attributes_include, :kind_of => String, :default => ' '
+attribute :attributes_exclude, :kind_of => String, :default => ' '
